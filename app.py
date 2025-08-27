@@ -57,13 +57,23 @@ else:
             df = pd.DataFrame(dummy_data)
             st.success("Dummy-Daten geladen.")
         else:
-            uploaded = st.file_uploader("Bilanzdatei hochladen", type=["csv","xlsx"])
+            uploaded = st.file_uploader("Bilanzdatei hochladen", type=["csv","xlsx","xml","pdf"])
             if uploaded:
                 if uploaded.name.endswith(".csv"):
                     df = pd.read_csv(uploaded, sep=";")
-                else:
+                elif uploaded.name.endswith(".xlsx"):
                     df = pd.read_excel(uploaded)
-                st.success(f"Datei {uploaded.name} wurde geladen.")
+                elif uploaded.name.endswith(".xml"):
+                    st.info("XML-Datei wurde hochgeladen (Parsing folgt später).")
+                    df = None
+                elif uploaded.name.endswith(".pdf"):
+                    st.info("PDF-Datei wurde hochgeladen (Auswertung folgt später).")
+                    df = None
+                else:
+                    st.error("Dateiformat nicht unterstützt.")
+                    df = None
+                if df is not None:
+                    st.success(f"Datei {uploaded.name} wurde geladen.")
             else:
                 df = None
 
