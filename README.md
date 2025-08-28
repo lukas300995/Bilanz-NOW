@@ -1,10 +1,12 @@
-# 📊 Bilanz App (Full Version)
+# 📊 Bilanz App (Extended Version)
 
-Streamlit-App zur Bilanzanalyse mit:
+Streamlit-App zur Bilanzanalyse mit erweiterten Kennzahlen.
+
+## Funktionen
 - Login für Kunde, Steuerberater, Bank
 - Datei-Upload (CSV, XLSX, XML, PDF)
 - Dummy-Daten wählbar
-- Automatische Kennzahlenberechnung (Eigenkapitalquote, Verschuldungsgrad, Liquidität, Anlagendeckungsgrad)
+- Automatische Kennzahlenberechnung (Bilanz, Rentabilität, Liquidität, Produktivität)
 - Diagramm zur Visualisierung
 
 ## Login
